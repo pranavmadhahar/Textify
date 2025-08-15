@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textify</title>
+</head>
+<body>
+    <h1>Welcome to Textify</h1>
+    <h2>Enter your text below</h2>
+
+    <form action="/analyze" method ="get" >
+
+        <textarea name="text" style="width: 1335px; height: 279px;"></textarea>
+        <input type="checkbox" name="removepunc" value="on" > Remove Punctuations <br>
+        <input type="checkbox" name="capitalize" value="on" > Capitalize <br>
+        <input type="checkbox" name="newlineremove" value="on" > Newline Remover <br>
+        <input type="checkbox" name="spaceremove" value="on" > Extra Space Remover<br>
+        <input type="checkbox" name="charcount" value="on" > Character Count <br>
+        <br>
+        <button type="submit">Analyze</button>
+    </form>
+</body>
+</html>
