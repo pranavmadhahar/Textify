@@ -10,12 +10,12 @@ def index(request):
     return render(request, 'index.html')
 
 def analyze(request):
-    jtext = request.GET.get('text', 'default')
-    removepunc = request.GET.get('removepunc', 'off')
-    capitalize = request.GET.get('capitalize', 'off')
-    newlineremove = request.GET.get('newlineremove', 'off')
-    spaceremove = request.GET.get('spaceremove', 'off')
-    charcount = request.GET.get('charcount', 'off')
+    jtext = request.POST.get('text', 'default')
+    removepunc = request.POST.get('removepunc', 'off')
+    capitalize = request.POST.get('capitalize', 'off')
+    newlineremove = request.POST.get('newlineremove', 'off')
+    spaceremove = request.POST.get('spaceremove', 'off')
+    charcount = request.POST.get('charcount', 'off')
     print(jtext)
 
     if removepunc == "on":
@@ -41,7 +41,7 @@ def analyze(request):
         return render(request, 'analyze.html', params)
     
     elif newlineremove == 'on':
-        analyzed = ''.join(char for char in jtext if char != '\n')
+        analyzed = ''.join(char for char in jtext if char != '\n' and char != '\r')
         params = {
             'purpose': 'Newlines Removed',
             'analyzed_text': analyzed,
